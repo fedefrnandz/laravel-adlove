@@ -44,7 +44,7 @@ class AuthController extends Controller
             }
 
             return response()->json([
-                'message' => 'Email o Contrasena incorrecta',
+                'message' => 'Email no registrado o contraseña no comple los requisitos.',
             ], 401);
 
 
