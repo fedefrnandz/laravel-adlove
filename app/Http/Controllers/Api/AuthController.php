@@ -35,7 +35,7 @@ class AuthController extends Controller
             
             if (Auth::attempt($credentials)) {
                 $user = Auth::user();
-                $access_token = $user->createToken('AdloveApp')->plainTextToken;
+                $access_token = $user->createToken('access_token')->plainTextToken;
 
                 return response()->json([
                     'user' => $user,
@@ -44,7 +44,7 @@ class AuthController extends Controller
             }
 
             return response()->json([
-                'message' => 'Email no registrado o contraseña no comple los requisitos.',
+                'message' => 'Email no registrado o contraseña no cumple los requisitos.',
             ], 401);
 
 
@@ -86,7 +86,7 @@ class AuthController extends Controller
 
             if ($user) {
                 Auth::login($user);
-                $access_token = $user->createToken('AdloveApp')->plainTextToken;
+                $access_token = $user->createToken('access_token')->plainTextToken;
 
                 return response()->json([
                     'user' => $user,
