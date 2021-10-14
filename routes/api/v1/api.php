@@ -28,7 +28,9 @@ use Illuminate\Validation\ValidationException;
 Route::prefix('/user')->group(function() {
 
         Route::post('/login', 'App\Http\Controllers\Api\AuthController@login');
-        Route::middleware('auth:api')->get('/all', 'App\Http\Controllers\UserController@all');
+
+        Route::middleware('auth:sanctum')->get('/all', 'App\Http\Controllers\UserController@all');
     
 });
 
+ 
