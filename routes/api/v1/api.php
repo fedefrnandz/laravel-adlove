@@ -30,7 +30,10 @@ Route::prefix('/user')->group(function() {
         Route::post('/login', 'App\Http\Controllers\Api\AuthController@login');
 
         Route::middleware('auth:sanctum')->get('/all', 'App\Http\Controllers\UserController@all');
+
+        Route::post('/register', 'App\Http\Controllers\Api\AuthController@register');
     
 });
+
 
  
