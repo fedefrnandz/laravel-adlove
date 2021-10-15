@@ -32,6 +32,10 @@ Route::prefix('/user')->group(function() {
         Route::middleware('auth:sanctum')->get('/all', 'App\Http\Controllers\UserController@all');
 
         Route::post('/register', 'App\Http\Controllers\Api\AuthController@register');
+
+        Route::middleware('auth:sanctum')->get('/me', 'App\Http\Controllers\Api\AuthController@me');
+
+
     
 });
 

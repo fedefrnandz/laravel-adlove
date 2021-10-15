@@ -105,4 +105,18 @@ class AuthController extends Controller
             ], 400);
         }
     }
+
+
+    /**
+     * Api que devuelve los datos de un usuario logueado. 
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function me(Request $request){
+        $user = auth()->user();
+        return response()->json([
+            'user' => $user,
+        ]);
+    }
 }
